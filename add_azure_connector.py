@@ -33,13 +33,13 @@ def Add_AZURE_Connector():
     URL = URL + "/cloudview/rest/1.0/azure/connectors"
 
     if debug:
-        print '------------------------------AWS Connectors--------------------------------'
+        print '------------------------------AZURE Connectors--------------------------------'
         if not os.path.exists("debug"):
             os.makedirs("debug")
         debug_file_name = "debug/debug_file"+ time.strftime("%Y%m%d-%H%M%S") + ".txt"
         debug_file = open(debug_file_name, "w")
-        debug_file.write('------------------------------AWS Connectors--------------------------------' + '\n')
-    #df = pd.read_excel('AWS_CONNECTOR_INFO.xlsx', sheet_name='Sheet1')
+        debug_file.write('------------------------------AZURE Connectors--------------------------------' + '\n')
+    #df = pd.read_excel('AZURE_CONNECTOR_INFO.xlsx', sheet_name='Sheet1')
     with open('AZURE_CONNECTOR_INFO.csv', 'rb') as f:
         reader = csv.DictReader(f)
         a = list(reader)
@@ -54,8 +54,8 @@ def Add_AZURE_Connector():
         DESC = i['DESC']
         NAME = i['NAME']
         if debug:
-            print str(counter) + ' : AWS Connector'
-            debug_file.write(str(counter) + ' : AWS Connector' + '\n')
+            print str(counter) + ' : AZURE Connector'
+            debug_file.write(str(counter) + ' : AZURE Connector' + '\n')
             print '---' + 'NAME  : ' + str(NAME)
             print '---' + 'DESC : ' + str(DESC)
             print '---' + 'Application ID : ' + str(AppID)
@@ -86,11 +86,11 @@ def Add_AZURE_Connector():
                 debug_file.write(str(counter) + ' : Connector Added Successfully' + '\n')
 
         except requests.exceptions.HTTPError as e:  # This is the correct syntax
-            print str(counter) + ' : Failed to Add AWS Connector'
+            print str(counter) + ' : Failed to Add Azure Connector'
             print e
             print '-------------------------------------------------------------'
             if debug:
-                debug_file.write(str(counter) + ' : Failed to Add AWS Connector' + '\n')
+                debug_file.write(str(counter) + ' : Failed to Add Azure Connector' + '\n')
                 debug_file.write(str(e) + '\n')
     if debug:
         debug_file.close()
