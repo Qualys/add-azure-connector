@@ -1,0 +1,5 @@
+defaults:
+  username: ""
+  password: ""
+  apiURL: ""
+  debug: true
