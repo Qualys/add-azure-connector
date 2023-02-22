@@ -5,8 +5,6 @@ import yaml
 import json
 import csv
 import urllib3
-from azure.common.credentials import ServicePrincipalCredentials
-from azure.mgmt.resource import SubscriptionClient
 
 
 def config():
@@ -65,24 +63,8 @@ def Add_AZURE_Connector():
         DirectoryID = i['DIRECTORYID']
         DESC = i['DESC']
         NAME = i['NAME']
-        from azure.common.credentials import ServicePrincipalCredentials
-
-
-        # Specify your Azure credentials
-
-
-        # Authenticate with Azure using Service Principal credentials
-        credentials = ServicePrincipalCredentials(
-            client_id=str(AppID), secret=str(AzureAuthKeyID), tenant=str(DirectoryID))
-
-        # Create a SubscriptionClient to interact with subscriptions
-        subscription_client = SubscriptionClient(credentials)
-
-        # Use the SubscriptionClient to get the subscription by ID
-        subscription = subscription_client.subscriptions.get(str(SubID))
-
-        # Print the name of the subscription
-        sub_name = subscription.display_name
+        
+ 
 
         if debug:
             print(str(counter) + ' : AZURE Connector')
@@ -99,8 +81,8 @@ def Add_AZURE_Connector():
             "ServiceRequest": {
                 "data": {
                     "AzureAssetDataConnector": {
-                        "name": "{}".format(sub_name),
-                        "description": "Azure connector created using API",
+                        "name": "{}".format(str(NAME)),
+                        "description": "{}".format(str(DESC)),
 
 
                         "disabled": 'false',
@@ -137,8 +119,8 @@ def Add_AZURE_Connector():
             "ServiceRequest": {
                 "data": {
                     "AzureAssetDataConnector": {
-                        "name": "{}".format(sub_name),
-                        "description": "Azure connector created using API",
+                        "name": "{}".format(str(NAME)),
+                        "description": "{}".format(str(DESC)),
 
 
                         "disabled": 'false',
