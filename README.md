@@ -53,8 +53,6 @@ Info : Kindly provide correct correct USERNAME, PASSWORD & CloudView URL in the 
 Script looks for config.yml in the directory the script runs from
 URL = Please get the proper API URL For you Qualys API connection based on your pod from the API documentation: https://qualys.com/documentation
 The API user used must have manager permissions to create the Azure connector(s).
-# csa
-If you want to create only Asset View Connector please mention false in csa section of the file else make it true for both Assest View and Cloud View (CSA) connector
 
 Example file contents:
 
@@ -67,6 +65,10 @@ URL
 debug
 
 csa
+
+# csa
+If you want to create only Asset View Connector please mention false in csa section of the file else make it true for both Assest View and Cloud View (CSA) connector
+
 
 # Script Requirements
 This script requires the following PIP modules to run
