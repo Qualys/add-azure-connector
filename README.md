@@ -51,8 +51,11 @@ Copy the subscription ID you noted and paste it into the connector details in th
 *config.yml*
 Info : Kindly provide correct correct USERNAME, PASSWORD & CloudView URL in the ./config.yml
 Script looks for config.yml in the directory the script runs from
-URL = Please get the proper base URL For you Qualys API connection based on your pod from the API documentation: https://qualys.com/documentation
+URL = Please get the proper API URL For you Qualys API connection based on your pod from the API documentation: https://qualys.com/documentation
 The API user used must have manager permissions to create the Azure connector(s).
+# csa
+If you want to create only Asset View Connector please mention false in csa section of the file else make it true for both Assest View and Cloud View (CSA) connector
+
 Example file contents:
 
 useranme
@@ -63,16 +66,19 @@ URL
 
 debug
 
+csa
+
 # Script Requirements
 This script requires the following PIP modules to run
-Modules: requests, json, base64, csv, os, time
+Modules: json, base64, csv, os, time, urllib3
 
-MAC/Linux "pip install requests"
-Windows "python -m pip install requests"
+MAC/Linux "pip install urllib3"
+Windows "python -m pip install urllib3"
 
 # Debug
 Set Debug True or False in config.yml
 Debug file for script run, located in ./debug folder with time/date stamp
+
 
 # License
 # Copyright (c) 2018, Qualys All rights reserved.
