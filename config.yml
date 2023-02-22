@@ -3,3 +3,4 @@ defaults:
   password: ""
   apiURL: ""
   debug: true
+  csa: false
