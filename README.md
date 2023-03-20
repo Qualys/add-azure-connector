@@ -59,7 +59,7 @@ Click Save to finish assigning the role. You’ll see your application in the li
 
 Copy the subscription ID you noted and paste it into the connector details in the Qualys Azure    Connector screen and then click Create Connector.
 
-### config.yml
+## config.yml
 Info : Kindly provide correct correct USERNAME, PASSWORD & CloudView URL in the ./config.yml
 Script looks for config.yml in the directory the script runs from
 URL = Please get the proper API URL For you Qualys API connection based on your pod from the API documentation: https://qualys.com/documentation
