@@ -1,11 +1,11 @@
 # Add Azure Connector
 *THIS SCRIPT IS PROVIDED TO YOU "AS IS."  TO THE EXTENT PERMITTED BY LAW, QUALYS HEREBY DISCLAIMS ALL WARRANTIES AND LIABILITY FOR THE PROVISION OR USE OF THIS SCRIPT.  IN NO EVENT SHALL THESE SCRIPTS BE DEEMED TO BE CLOUD SERVICES AS PROVIDED BY QUALYS*
 
-### add_azure_connector.py
+## add_azure_connector.py
 Info : Python File adds the AZURE connector into CloudView w.r.t details provided in "./AZURE_CONNECTOR_INFO.csv" & "./config.yml".
        Console output as well as debug_file.txt will have both success & failure logs.
 
-### AZURE_CONNECTOR_INFO.csv
+## AZURE_CONNECTOR_INFO.csv
 Info : csv files contains below attributes required for AZURE connector
 Script looks for AZURE_CONNECTOR_INFO.csv in the directory the script runs from
 
@@ -80,19 +80,18 @@ config file contents:
  #### csa: If you want to create only Asset View Connector please mention false in csa section of the file else make it true for both Assest View and Cloud View (CSA) connector
 
 
-### Script Requirements
+### Debug
+Set Debug True or False in config.yml
+Debug file for script run, located in ./debug folder with time/date stamp
+
+## Script Requirements
 This script requires the following PIP modules to run
 Modules: json, base64, csv, os, time, urllib3
 
 MAC/Linux "pip install urllib3"
 Windows "python -m pip install urllib3"
 
-### Debug
-Set Debug True or False in config.yml
-Debug file for script run, located in ./debug folder with time/date stamp
-
-
-### License
+## License
 ## Copyright (c) 2018, Qualys All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. * Neither the name of the Qualys nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL QUALYS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED ANDON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
